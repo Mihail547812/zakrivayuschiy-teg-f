@@ -2,9 +2,8 @@
 @font-face {
     font-family: 'PressStart2P';
     src:
-        local(PressStart2P-Regular),
-        url('PressStart2P-Regular.woff2') format('woff2'),
-        url('PressStart2P-Regular.woff') format('woff');
+        local('PressStart2P-Regular'),
+        url('PressStart2P-Regular.woff') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -14,9 +13,8 @@
     font-family: 'Inter';
     src:
         local('Inter-Variable'),
-        url('Inter-VariableFont_slnt,wght.woff2') format('woff2'),
-        url('Inter-VariableFont_slnt,wght.woff2') format('woff2-variations'),
-        url('Inter-Variable.woff2') format('woff');
+        url('Inter-VariableFont.woff2') format('woff2 supports variations'),
+        url('Inter-VariableFont.woff2') format('woff2-variations');
     font-weight: 400 700;
     font-style: normal;
     font-display: swap;

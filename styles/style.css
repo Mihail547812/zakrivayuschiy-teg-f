@@ -256,7 +256,6 @@ dialog {
   transform: translate(-50%, -50%);
   background-color: white;
   border: #000 2px solid;
-  z-index: 1000;
   margin: 0;
   padding-bottom: 28px;
 }
@@ -264,9 +263,11 @@ dialog {
 .close-button {
   justify-self: center;
   width: 293px;
-  border: 2px solid white;
+  border: 2px solid black;
   margin-top: 28px;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
 }
 
 .menu-open {
@@ -282,10 +283,6 @@ dialog {
   margin-top: 13px;
   width: 39px;
   height: 39px;
-}
-
-.svg-image-child {
-  transform: scale(0.5);
 }
 
 .dialog-heading {
@@ -324,7 +321,7 @@ dialog::backdrop {
 }
 
 .svg-element-child {
-  transform: scale(0.5);
+  transform: scale(0.9);
   overflow: visible;
 }
 

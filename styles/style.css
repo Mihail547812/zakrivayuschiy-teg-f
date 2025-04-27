@@ -142,6 +142,7 @@ main {
   -moz-appearance: none;
   appearance: none;
   text-decoration: none;
+  color: #fff;
 }
 
 .article {
@@ -284,7 +285,7 @@ dialog {
 }
 
 .svg-image-child {
-  transform: scale(1.9);
+  transform: scale(0.5);
 }
 
 .dialog-heading {
@@ -300,12 +301,14 @@ dialog::backdrop {
 
 .button-dialog {
   padding-top: 9px;
-  stroke: #fff;
   background-color: #fff;
+  background-blend-mode: difference;
 }
 
 .button-dialog svg {
-  mix-blend-mode: difference;
+  block-size: 1.5em;
+  position: relative;
+  background-blend-mode: difference;
 }
 
 .svg-element {
@@ -316,6 +319,13 @@ dialog::backdrop {
   margin-left: 18px;
   margin-right: 9px;
   color: white;
+  mix-blend-mode: difference;
+  overflow: visible;
+}
+
+.svg-element-child {
+  transform: scale(0.5);
+  overflow: visible;
 }
 
 .buttons {

@@ -14,8 +14,9 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-main);
-  font-variation-settings: "wght" var(--text-weight);
+  font-variation-settings: "wght" var(--main-heading-font-size);
   background-image: var(--background-image);
+  background-attachment: fixed;
 }
 
 .header {
@@ -27,6 +28,7 @@
 
 main {
   margin-top: 100px;
+  padding-bottom: 50px;
 }
 
 .heading {
@@ -66,8 +68,15 @@ main {
 }
 
 .card-heading {
+  font-variation-settings: 'wght' var(--main-heading-font-size);
   font-size: 18px;
   padding: 5px 10px 5px 10px;
+}
+
+.main-text {
+  word-spacing: 2px;
+  font-family: var(--font-main);
+  padding-right: 17px;
 }
 
 .img {
@@ -117,7 +126,8 @@ main {
   font-size: var(--main-font-size);
   font-family: var(--font-accent);
   text-shadow: 0.3px 0.3px 0.3px #fff;
-  opacity: 0.8;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
 }
 
 .button {
@@ -146,22 +156,13 @@ main {
   margin-top: 27px;
 }
 
-.card__like-button {
-  height: 38px;
-  display: flex;
-  outline: none;
-  margin: 25px 25px 0 0;
-  justify-self: end;
-  width: 174px;
-  gap: 5px;
-}
-
 .animation {
   overflow: hidden;
   position: relative;
   color: #000;
   width: 130px;
   border: 2px solid #000;
+  transition: all 0.3s ease;
 }
 
 .button__text {
@@ -198,7 +199,6 @@ main {
 
 .animation:focus {
   box-shadow: 2px 2px rgb(0, 0, 0);
-  transition: box-shadow 0.3s ease;
 }
 
 .like-icon {
@@ -220,7 +220,7 @@ main {
   opacity: 0;
 }
 
-.card__like-button:focus .svg-parent {
+.card__icon-button:focus .svg-parent {
   border: 2px solid black;
 }
 
@@ -262,12 +262,10 @@ dialog {
 
 .close-button {
   justify-self: center;
-  align-self: center;
   width: 293px;
   border: 2px solid white;
-  z-index: 100;
-  overflow: visible;
   margin-top: 28px;
+  text-transform: uppercase;
 }
 
 .menu-open {
@@ -302,7 +300,12 @@ dialog::backdrop {
 
 .button-dialog {
   padding-top: 9px;
+  stroke: #fff;
   background-color: #fff;
+}
+
+.button-dialog svg {
+  mix-blend-mode: difference;
 }
 
 .svg-element {
@@ -312,17 +315,16 @@ dialog::backdrop {
   margin-top: 6px;
   margin-left: 18px;
   margin-right: 9px;
-  mix-blend-mode: difference;
-  fill: #fff;
-  /* background-color: #fff; */
+  color: white;
 }
 
-.svg-element-child {
-  stroke: #fff;
-}
-
-.close-button:focus {
-  box-shadow: 2px 2px rgb(0, 0, 0);
+.buttons {
+  display: flex;
+  height: 38px;
+  margin-top: 25px;
+  justify-content: end;
+  gap: 6px;
+  margin-right: 25px;
 }
 
 .core {
@@ -355,12 +357,12 @@ dialog::backdrop {
 
 .is-liked .main-body {
   fill: red;
-  transition: fill 0.3s linear 0.05;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .is-liked .contour {
   fill: red;
-  transition: fill 0.3s linear 0.06;
+  transition: fill 0.3s linear 0.06s;
 }
 
 .is-liked .heart {
@@ -378,16 +380,23 @@ dialog::backdrop {
 
 .like-icon:active .core {
   fill: var(--animation-fill-color);
-  transition: fill 0.3 ease;
+  transition: fill 0.3s ease;
 }
 
 .like-icon:active .main-body {
   fill: var(--animation-fill-color);
-  transition: fill 0.3 ease 0.3;
+  transition: fill 0.3s ease 0.05s;
+}
+
+.like-icon:active .contour {
+  fill: black;
+  transition: fill 0.3s ease 0.05s;
 }
 
 @media (width <=1200px) {
-  main, .header {
+
+  main,
+  .header {
     margin: 0 auto;
   }
 
@@ -413,7 +422,7 @@ dialog::backdrop {
     font-size: 2vw;
     text-align: center;
   }
-  
+
 }
 
 @media (width <=625px) {
@@ -427,6 +436,10 @@ dialog::backdrop {
     max-width: 375px;
   }
 
+  .card {
+    padding-bottom: 26px;
+  }
+
   .heading {
     width: 100%;
   }
@@ -435,12 +448,24 @@ dialog::backdrop {
     margin: 0;
   }
 
+  .main-text {
+    margin: 0;
+    width: 100%;
+    line-height: 21px;
+    word-spacing: 0;
+    padding-right: 11px;
+  }
+
+  .subtitle-text {
+    margin: 26px 0 0 0;
+    width: 100%;
+  }
+
   .img {
     width: 373px;
   }
 
   .card:first-child {
-    height: 760px;
     margin-top: 92px;
   }
 
@@ -455,41 +480,20 @@ dialog::backdrop {
     width: 100%;
   }
 
+  .card-heading {
+    line-height: 22px;
+    letter-spacing: 0.2px;
+  }
+
   .heading {
     padding-top: 120px;
   }
 
   .article {
-    width: 320px;
+    width: 319px;
     margin-top: 22px;
-  }
-
-  .card:nth-child(2) {
-    height: 823px;
-  }
-
-  .card:nth-child(3) {
-    height: 739px;
-  }
-
-  .card:nth-child(4) {
-    height: 802px;
-  }
-
-  .card:nth-child(5) {
-    height: 844px;
-  }
-
-  .card:nth-child(6) {
-    height: 718px;
-  }
-
-  .card:nth-child(7) {
-    height: 781px;
-  }
-
-  .card:nth-child(8) {
-    height: 863px;
+    word-spacing: 2px;
+    padding-right: 14px;
   }
 
   .button-dialog {
@@ -514,7 +518,6 @@ dialog::backdrop {
   }
 
   .card__like-button {
-    margin: 26px 20px 0 0;
     gap: 0;
   }
 

@@ -359,14 +359,16 @@
           </svg>
           <h2 class="dialog-heading">Вставьте дискету, чтобы продолжить</h2>
         </div>
-        <button class="button button__text close-button" type="button" onclick="window['dialog-id'].close()">
-          Ок
+        <button class="animation close-button" type="button" onclick="window['dialog-id'].close()">
+          <span class="button button__text">
+            Ок
+          </span>
         </button>
       </dialog>
       <button class="button button-dialog animation button-save" type="button" onclick="window['dialog-id'].showModal()"
         aria-controls="dialog-id">
         <svg class="svg-element" width="21" height="21" viewBox="0 0 39 39" xmlns="http://www.w3.org/2000/svg">
-          <use href="svg/floppy1.svg#floppy" class="svg-element-child"/>
+          <use href="svg/floppy1.svg#floppy" class="svg-element-child" />
         </svg>
         <span class="button__text">Сохранить на память</span>
       </button>

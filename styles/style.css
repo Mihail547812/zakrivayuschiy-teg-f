@@ -68,15 +68,13 @@ main {
 }
 
 .card-heading {
-  font-variation-settings: 'wght' var(--main-heading-font-size);
+  font-variation-settings: 'wght' var(--font-weight-bold);
   font-size: 18px;
   padding: 5px 10px 5px 10px;
 }
 
 .main-text {
-  word-spacing: 2px;
   font-family: var(--font-main);
-  padding-right: 17px;
 }
 
 .img {
@@ -206,17 +204,6 @@ main {
   align-self: center;
 }
 
-.svg-parent {
-  width: 39px;
-  height: 38px;
-  border: 2px solid transparent;
-  align-self: center;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  transition: border-color 0.3s ease;
-}
-
 .sparks {
   opacity: 0;
 }
@@ -263,11 +250,11 @@ dialog {
 .close-button {
   justify-self: center;
   width: 293px;
-  border: 2px solid black;
   margin-top: 28px;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
+  background-color: #fff;
 }
 
 .menu-open {
@@ -459,8 +446,6 @@ dialog::backdrop {
     margin: 0;
     width: 100%;
     line-height: 21px;
-    word-spacing: 0;
-    padding-right: 11px;
   }
 
   .subtitle-text {
@@ -489,7 +474,6 @@ dialog::backdrop {
 
   .card-heading {
     line-height: 22px;
-    letter-spacing: 0.2px;
   }
 
   .heading {
@@ -497,10 +481,8 @@ dialog::backdrop {
   }
 
   .article {
-    width: 319px;
+    width: 317.5px;
     margin-top: 22px;
-    word-spacing: 2px;
-    padding-right: 14px;
   }
 
   .button-dialog {
